@@ -1,23 +1,25 @@
+import java.util.Date;
+
 public class Customer {
-    private String id;
+    private int id;
     private String firstName;
     private String lastName;
     private String address;
-    private String dob;
+    private Date dob;
     private String email;
     private String phone;
 
     public Customer() {
-        this.id = "";
+        this.id = 0;
         this.firstName = "";
         this.lastName = "";
         this.address = "";
-        this.dob = "00/00/0000";
+        this.dob = null;
         this.email = "";
         this.phone = "";
     }
 
-    public Customer(String id, String firstName, String lastName, String address, String dob, String email, String phone) {
+    public Customer(int id, String firstName, String lastName, String address, Date dob, String email, String phone) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -28,11 +30,11 @@ public class Customer {
     }
 
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -64,11 +66,11 @@ public class Customer {
     }
 
 
-    public String getDob() {
+    public Date getDob() {
         return dob;
     }
 
-    public void setDob(String dob) {
+    public void setDob(Date dob) {
         this.dob = dob;
     }
 
