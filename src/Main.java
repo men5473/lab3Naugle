@@ -1,3 +1,14 @@
+/**
+
+ * Project: Solo Lab 3 Database Assignment MySQL and MongoDB Perform CRUD Create. Read, Update and Delete
+ * Purpose Details: main for project, makes customers and CRUDs them in each db
+ * Course: IST 242
+ * Author: Martin Naugle
+ * Date Developed: 06/09/2026
+ * Last Date Changed: 06/09/2026
+ * Revision:
+
+ */
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;

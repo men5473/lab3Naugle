@@ -1,3 +1,14 @@
+/**
+
+ * Project: Solo Lab 3 Database Assignment MySQL and MongoDB Perform CRUD Create. Read, Update and Delete
+ * Purpose Details: mysql CRUD
+ * Course: IST 242
+ * Author: Martin Naugle
+ * Date Developed: 06/09/2026
+ * Last Date Changed: 06/09/2026
+ * Revision:
+
+ */
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +19,7 @@ public class MySQLCRUD {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "toor";
 
+    ///connects to mysql and returns the connection
     public static Connection openSQL() {
         Connection connection = null;
         try {
@@ -18,6 +30,7 @@ public class MySQLCRUD {
         }
     }
 
+    ///adds customer to sql database
     public static void insertCustomer(Connection connection, int id, String firstName, String lastName, String address,
                                        Date dob, String email, String phone) throws SQLException {
         String sql = "INSERT INTO Customers (id, firstName, lastName, address, dob, email, phone) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -33,6 +46,7 @@ public class MySQLCRUD {
         }
     }
 
+    ///returns all customers from sql database
     public static List<Customer> getAllCustomer(Connection connection) throws SQLException {
         List<Customer> customers = new ArrayList<>();
         String sql = "SELECT id, firstName, lastName, address, dob, email, phone FROM customers";
@@ -52,6 +66,7 @@ public class MySQLCRUD {
         return customers;
     }
 
+    ///updates customer's first name
     public static void updateCustomer(Connection connection, int id, String newFirstName) throws SQLException {
         String sql = "UPDATE customers SET firstName = ? WHERE id = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
@@ -61,6 +76,7 @@ public class MySQLCRUD {
         }
     }
 
+    ///deletes a customer from db
     public static void deleteCustomer(Connection connection, int id) throws SQLException {
         String sql = "DELETE FROM customers WHERE id = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
